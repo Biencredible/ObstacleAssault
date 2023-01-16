@@ -9,7 +9,7 @@
 UCLASS()
 class OBSTACLEASSAULT_API AMovingPlatform : public AActor
 {
-	GENERATED_BODY()
+	GENERATED_BODY()	
 	
 public:	
 	// Sets default values for this actor's properties
@@ -23,6 +23,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+private:
 	UPROPERTY(EditAnywhere, Category="Moving Platform")
 	FVector PlatformVelocity = FVector(100, 0, 0);
 
@@ -30,4 +31,7 @@ public:
 	float moveDistance = 100.f;
 
 	FVector StartLocation;
+
+	void MovePlatform(float DeltaTime);
+	void RotatePlatform(float DeltaTime);
 };
